@@ -37,6 +37,12 @@
   <!-- Phosphor Icons -->
   <script src="https://unpkg.com/@phosphor-icons/web"></script>
   <link rel="stylesheet" href="css/style.css">
+
+  <!-- FIREBASE SDK (bản compat, dùng chung với js/firebase-config.js) -->
+  <script src="https://www.gstatic.com/firebasejs/10.12.2/firebase-app-compat.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/10.12.2/firebase-auth-compat.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/10.12.2/firebase-firestore-compat.js"></script>
+  <script src="js/firebase-config.js"></script>
 </head>
 <body class="bg-stone-100 min-h-screen flex items-center justify-center p-4 selection:bg-brand-500 selection:text-white">
 
@@ -200,6 +206,7 @@
           <i class="ph-bold ph-chat-circle-dots text-lg text-blue-600"></i>
           <span>Đăng Nhập Bằng Tài Khoản Zalo OTP</span>
         </button>
+        <p class="text-[10px] text-stone-400">(Chế độ demo — chưa xác thực thật với Zalo)</p>
       </div>
 
     </div>
@@ -242,42 +249,97 @@
       }
     }
 
-    function executeLogin(e) {
-      e.preventDefault();
-      const id = document.getElementById('saLoginId').value.trim();
-      const user = {
-        name: id.includes('@') ? id.split('@')[0] : 'Khách Thân Thiết',
-        phone: id,
-        role: 'Hội viên Thân Thiết',
-        points: 150
-      };
-      localStorage.setItem('htx_user', JSON.stringify(user));
-      alert(`🎉 Đăng nhập thành công!\nChào mừng ${user.name} trở lại. Đang chuyển về trang chủ...`);
-      window.location.href = 'home.html';
+    // Biến số điện thoại thành 1 "email giả" để Firebase Auth (Email/Password)
+    // có thể xác thực được, vì Firebase yêu cầu định dạng email thật.
+    // Khách hàng không nhìn thấy và không cần biết chuyện này.
+    function toFirebaseEmail(idInput) {
+      const trimmed = idInput.trim();
+      if (trimmed.includes('@')) return trimmed.toLowerCase();
+      const digitsOnly = trimmed.replace(/[^0-9]/g, '');
+      return `${digitsOnly}@dacsandongnai-user.app`;
     }
 
-    function executeRegister(e) {
+    // Dịch mã lỗi Firebase sang tiếng Việt dễ hiểu
+    function translateFirebaseError(code) {
+      const map = {
+        'auth/email-already-in-use': 'Số điện thoại/email này đã được đăng ký trước đó. Vui lòng đăng nhập.',
+        'auth/invalid-email': 'Số điện thoại/email không hợp lệ.',
+        'auth/weak-password': 'Mật khẩu quá yếu, cần ít nhất 6 ký tự.',
+        'auth/wrong-password': 'Sai mật khẩu, vui lòng thử lại.',
+        'auth/invalid-credential': 'Sai số điện thoại/email hoặc mật khẩu.',
+        'auth/invalid-login-credentials': 'Sai số điện thoại/email hoặc mật khẩu.',
+        'auth/user-not-found': 'Tài khoản chưa tồn tại. Vui lòng đăng ký trước.',
+        'auth/too-many-requests': 'Bạn đã thử sai quá nhiều lần. Vui lòng thử lại sau ít phút.',
+        'firebase-not-ready': 'Hệ thống tài khoản đang bảo trì, vui lòng thử lại sau hoặc liên hệ Zalo HTX.'
+      };
+      return map[code] || ('Đã có lỗi xảy ra (' + code + '). Vui lòng thử lại.');
+    }
+
+    async function executeLogin(e) {
+      e.preventDefault();
+      const idValue = document.getElementById('saLoginId').value.trim();
+      const password = document.getElementById('saLoginPassword').value;
+      const submitBtn = e.target.querySelector('button[type="submit"]');
+      const originalBtnHtml = submitBtn.innerHTML;
+
+      submitBtn.disabled = true;
+      submitBtn.innerHTML = '<span>Đang đăng nhập...</span>';
+
+      const email = toFirebaseEmail(idValue);
+      const result = await loginUserWithFirebase(email, password);
+
+      if (result.success) {
+        localStorage.setItem('htx_user', JSON.stringify(result.user));
+        alert(`🎉 Đăng nhập thành công!\nChào mừng ${result.user.name} trở lại. Đang chuyển về trang chủ...`);
+        window.location.href = 'home.html';
+      } else {
+        submitBtn.disabled = false;
+        submitBtn.innerHTML = originalBtnHtml;
+        alert('❌ Đăng nhập thất bại!\n' + translateFirebaseError(result.message));
+      }
+    }
+
+    async function executeRegister(e) {
       e.preventDefault();
       const name = document.getElementById('saRegName').value.trim();
       const phone = document.getElementById('saRegPhone').value.trim();
       const role = document.getElementById('saRegRole').value;
       const pwd = document.getElementById('saRegPassword').value;
       const confirmPwd = document.getElementById('saRegConfirmPassword').value;
+      const submitBtn = e.target.querySelector('button[type="submit"]');
+      const originalBtnHtml = submitBtn.innerHTML;
 
       if (pwd !== confirmPwd) {
         alert('Mật khẩu nhập lại không khớp!');
         return;
       }
+      if (pwd.length < 6) {
+        alert('Mật khẩu phải có ít nhất 6 ký tự!');
+        return;
+      }
 
-      const user = {
-        name: name,
-        phone: phone,
-        role: role === 'farmer' ? 'Xã viên / Chủ Vườn' : 'Khách Hàng Thân Thiết',
-        points: 50
-      };
-      localStorage.setItem('htx_user', JSON.stringify(user));
-      alert(`🎉 Chúc mừng ${name} đã đăng ký tài khoản thành công!\nTặng bạn 50 điểm thành viên. Đang chuyển về trang chủ...`);
-      window.location.href = 'home.html';
+      submitBtn.disabled = true;
+      submitBtn.innerHTML = '<span>Đang tạo tài khoản...</span>';
+
+      const email = toFirebaseEmail(phone);
+      const result = await registerUserWithFirebase(email, pwd, name, role);
+
+      if (result.success) {
+        const userObj = {
+          uid: result.user.uid,
+          name: name,
+          phone: phone,
+          role: role === 'farmer' ? 'Xã viên / Chủ Vườn' : 'Khách Hàng Thân Thiết',
+          points: 50
+        };
+        localStorage.setItem('htx_user', JSON.stringify(userObj));
+        alert(`🎉 Chúc mừng ${name} đã đăng ký tài khoản thành công!\nTặng bạn 50 điểm thành viên. Đang chuyển về trang chủ...`);
+        window.location.href = 'home.html';
+      } else {
+        submitBtn.disabled = false;
+        submitBtn.innerHTML = originalBtnHtml;
+        alert('❌ Đăng ký thất bại!\n' + translateFirebaseError(result.message));
+      }
     }
 
     function executeZaloLogin() {
@@ -288,7 +350,7 @@
         points: 120
       };
       localStorage.setItem('htx_user', JSON.stringify(user));
-      alert('Đăng nhập thành công qua Zalo! Đang chuyển về trang chủ...');
+      alert('Đăng nhập thành công qua Zalo (chế độ demo)! Đang chuyển về trang chủ...');
       window.location.href = 'home.html';
     }
   </script>
