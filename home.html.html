@@ -1,0 +1,1125 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Đặc Sản Đồng Nai - Tinh Hoa Nông Sản Miền Đông</title>
+  <meta name="description" content="Nông sản đặc sản Đồng Nai chính gốc: Bưởi Tân Triều, Hạt điều rang củi Xuân Lộc, Mãng cầu Thạnh Phú. Truy xuất nguồn gốc minh bạch bằng mã QR, hỗ trợ tư vấn combo quà tặng AI 24/7.">
+  
+  <!-- Tailwind CSS CDN -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            brand: {
+              50: '#f2fbf4',
+              100: '#e1f7e6',
+              500: '#16a34a',
+              600: '#15803d',
+              700: '#166534',
+              800: '#14532d',
+              accent: '#f59e0b',
+              soil: '#78350f'
+            }
+          }
+        }
+      }
+    }
+  </script>
+  
+  <!-- Phosphor Icons CDN -->
+  <script src="https://unpkg.com/@phosphor-icons/web"></script>
+
+  <!-- External Custom Stylesheet -->
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body class="bg-stone-50 text-stone-800 antialiased selection:bg-brand-500 selection:text-white">
+
+  <!-- TOP ANNOUNCEMENT BAR -->
+  <div class="bg-brand-800 text-brand-100 text-xs sm:text-sm py-2 px-4 text-center font-medium flex items-center justify-center gap-2">
+    <span class="inline-flex items-center px-2 py-0.5 rounded-full text-xs font-semibold bg-brand-600 text-white">VietGAP 100%</span>
+    <span>Miễn phí giao hàng đơn quà biếu từ 500k toàn quốc • Truy xuất mã QR từng vườn bưởi Tân Triều</span>
+    <a href="#products" class="underline hover:text-white font-bold ml-1">Xem ngay &rarr;</a>
+  </div>
+  <!-- NAVIGATION -->
+  <header class="sticky top-0 z-40 glass-effect border-b border-stone-200/80 transition-all">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-20 flex items-center justify-between">
+      <div class="flex items-center gap-3">
+        <div class="w-11 h-11 rounded-xl bg-gradient-to-tr from-brand-700 to-brand-500 flex items-center justify-center text-white text-2xl shadow-lg shadow-brand-500/20">
+          <i class="ph-bold ph-plant"></i>
+        </div>
+        <div>
+          <a href="#" class="font-serif-title text-xl sm:text-2xl font-bold text-stone-900 tracking-tight block">Đặc Sản Đồng Nai</a>
+          <p class="text-xs text-brand-700 font-semibold tracking-wider uppercase">HTX Nông Sản Sạch Miền Đông</p>
+        </div>
+      </div>
+
+      <nav class="hidden md:flex items-center gap-8 font-medium text-stone-600 text-sm">
+        <a href="#about" class="hover:text-brand-600 transition">Câu Chuyện Nông Sản</a>
+        <a href="#products" class="hover:text-brand-600 transition">Sản Phẩm Chủ Lực</a>
+        <a href="#traceability" class="hover:text-brand-600 transition flex items-center gap-1.5">
+          <i class="ph ph-qr-code text-brand-600 text-base"></i> Truy Xuất QR
+        </a>
+        <a href="#ai-consultant" class="hover:text-brand-600 transition flex items-center gap-1.5 text-brand-700 font-semibold">
+          <i class="ph-fill ph-sparkle text-brand-accent"></i> AI Tư Vấn Quà Biếu
+        </a>
+      </nav>
+
+      <div class="flex items-center gap-3">
+        <!-- Auth User Profile / Login Button -->
+        <div id="authHeaderContainer"></div>
+
+        <button onclick="toggleChatbot()" class="relative flex items-center gap-2 bg-brand-50 hover:bg-brand-100 text-brand-700 border border-brand-200/80 px-4 py-2.5 rounded-full font-semibold text-xs sm:text-sm transition shadow-sm">
+          <i class="ph-fill ph-robot text-brand-600 text-base"></i>
+          <span class="hidden sm:inline">Hỏi Trợ Lý AI</span>
+          <span class="w-2 h-2 rounded-full bg-emerald-500 animate-ping absolute -top-0.5 -right-0.5"></span>
+        </button>
+        <a href="#order" class="bg-brand-600 hover:bg-brand-700 text-white font-semibold px-4 py-2.5 rounded-full text-xs sm:text-sm shadow-md shadow-brand-600/25 transition">
+          Đặt Hàng Nhanh
+        </a>
+      </div>
+    </div>
+  </header>
+
+  <!-- HERO SECTION -->
+  <section class="relative pt-12 pb-20 overflow-hidden bg-gradient-to-b from-brand-50/60 via-stone-50 to-stone-50">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
+        
+        <div class="lg:col-span-7 space-y-6">
+          <div class="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-amber-100/80 border border-amber-200 text-amber-800 text-xs sm:text-sm font-semibold">
+            <i class="ph-fill ph-seal-check text-brand-600"></i>
+            Chứng nhận OCOP 4 Sao & Tiêu Chuẩn VietGAP 2026
+          </div>
+          
+          <h1 class="font-serif-title text-4xl sm:text-5xl lg:text-6xl font-bold text-stone-900 leading-[1.15]">
+            Đặc Sản Đất Đỏ Đồng Nai <br>
+            <span class="text-transparent bg-clip-text bg-gradient-to-r from-brand-700 via-brand-600 to-amber-600">
+              Ngọt Lành Từ Vườn Nhà Ra Phố Thị
+            </span>
+          </h1>
+
+          <p class="text-stone-600 text-base sm:text-lg leading-relaxed max-w-2xl">
+            Mang tinh túy Cù lao Bưởi Tân Triều, Hạt điều rang củi Xuân Lộc và Mãng cầu dai Thạnh Phú đến tận bàn ăn gia đình bạn. Minh bạch từng gốc cây với <strong>mã QR truy xuất nguồn gốc</strong> và phục vụ thông minh cùng <strong>Trợ lý AI 24/7</strong>.
+          </p>
+
+          <div class="flex flex-wrap gap-4 pt-2">
+            <a href="#products" class="bg-brand-600 hover:bg-brand-700 text-white px-7 py-3.5 rounded-xl font-bold shadow-lg shadow-brand-600/30 flex items-center gap-2 transition hover:-translate-y-0.5">
+              <span>Khám Phá Đặc Sản</span>
+              <i class="ph-bold ph-arrow-right"></i>
+            </a>
+            <button onclick="openQrModal('TAN-TRIEU-01')" class="bg-white hover:bg-stone-100 text-stone-800 border border-stone-300 px-6 py-3.5 rounded-xl font-semibold flex items-center gap-2 shadow-sm transition">
+              <i class="ph-bold ph-qr-code text-brand-600 text-lg"></i>
+              <span>Quét Thử Tem QR Vườn Bưởi</span>
+            </button>
+          </div>
+
+          <!-- Feature stats -->
+          <div class="grid grid-cols-3 gap-4 pt-6 border-t border-stone-200">
+            <div>
+              <div class="text-2xl font-bold text-brand-700">100%</div>
+              <div class="text-xs text-stone-500 font-medium">Hái tươi chín cây</div>
+            </div>
+            <div>
+              <div class="text-2xl font-bold text-brand-700">3 Giây</div>
+              <div class="text-xs text-stone-500 font-medium">Truy xuất mã QR vùng trồng</div>
+            </div>
+            <div>
+              <div class="text-2xl font-bold text-brand-700">24/7</div>
+              <div class="text-xs text-stone-500 font-medium">Chatbot AI gợi ý quà biếu</div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Hero Card Showcase -->
+        <div class="lg:col-span-5 relative">
+          <div class="absolute -top-6 -left-6 w-48 h-48 bg-amber-200/40 rounded-full blur-3xl pointer-events-none"></div>
+          <div class="absolute -bottom-8 -right-8 w-60 h-60 bg-brand-200/40 rounded-full blur-3xl pointer-events-none"></div>
+
+          <div class="relative bg-white rounded-3xl p-6 sm:p-8 shadow-2xl border border-stone-100 space-y-6">
+            <div class="relative rounded-2xl overflow-hidden bg-stone-100 aspect-[4/3]">
+              <div class="w-full h-full bg-gradient-to-tr from-brand-700 to-amber-700 flex flex-col justify-end p-6 text-white relative">
+                <div class="absolute inset-0 bg-black/20"></div>
+                <div class="relative z-10 space-y-1">
+                  <span class="inline-block px-2.5 py-1 bg-amber-500 text-stone-900 text-xs font-bold rounded-md uppercase">Hàng Tuyển Chọn Loại 1</span>
+                  <h3 class="font-serif-title text-2xl font-bold">Bưởi Đường Lá Cam Tân Triều</h3>
+                  <p class="text-xs text-stone-200">Vỏ mỏng, mọng nước, vị ngọt thanh mát đậm đà phù sa Đồng Nai</p>
+                </div>
+              </div>
+            </div>
+
+            <div class="bg-brand-50 border border-brand-200/70 rounded-2xl p-4 flex items-center justify-between">
+              <div class="flex items-center gap-3">
+                <div class="w-12 h-12 bg-white rounded-xl border border-brand-200 flex items-center justify-center p-1 shadow-sm">
+                  <img src="https://api.qrserver.com/v1/create-qr-code/?size=150x150&data=https://dongnai-ocop.vn/trace/tan-trieu-batch-202609" alt="QR Demo" class="w-full h-full object-contain">
+                </div>
+                <div>
+                  <div class="text-xs text-brand-800 font-bold uppercase tracking-wider">Tem Chống Hàng Giả</div>
+                  <div class="text-xs text-stone-600">Lô TT-2026-09 | Vườn Cụ Sáu</div>
+                </div>
+              </div>
+              <button onclick="openQrModal('TAN-TRIEU-01')" class="text-xs font-bold text-brand-700 hover:text-brand-800 bg-white border border-brand-300 px-3 py-1.5 rounded-lg shadow-sm">
+                Chi tiết &rarr;
+              </button>
+            </div>
+
+            <!-- AI Live Recommendation Snippet -->
+            <div class="p-3 bg-stone-50 rounded-xl border border-stone-200 flex items-start gap-3">
+              <div class="w-8 h-8 rounded-full bg-brand-600 text-white flex items-center justify-center text-sm flex-shrink-0 mt-0.5">
+                <i class="ph-bold ph-sparkle"></i>
+              </div>
+              <div class="text-xs text-stone-600">
+                <span class="font-bold text-stone-800">Gợi ý AI thông minh:</span> 
+                "Nếu bạn mua biếu sếp hoặc đối tác phương Bắc, hãy chọn <em>Cặp Bưởi Da Xanh Nhất Phẩm</em> kèm <em>Hộp Điều Lụa Rang Củi</em> - giữ trọn phong vị miền Nam tới 3 tuần."
+              </div>
+            </div>
+
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- PROBLEM & DIGITAL TRANSFORMATION STORY -->
+  <section id="about" class="py-16 bg-white border-y border-stone-200">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="text-center max-w-3xl mx-auto mb-14">
+        <h2 class="text-xs font-bold tracking-widest text-brand-600 uppercase mb-2">Chuyển Đổi Số Nông Sản Đồng Nai</h2>
+        <h3 class="font-serif-title text-3xl sm:text-4xl font-bold text-stone-900">
+          Từ Trăn Trở Của Người Nông Dân Đến Giải Pháp Số Hóa Toàn Diện
+        </h3>
+        <p class="text-stone-600 text-sm sm:text-base mt-4">
+          Xóa bỏ rào cản địa lý, mang vị ngọt quê hương đến tận tay khách hàng khắp mọi miền đất nước bằng công nghệ và niềm tự hào nông sản Việt.
+        </p>
+      </div>
+
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+        <div class="bg-stone-50 rounded-2xl p-7 border border-stone-200 hover:border-brand-300 transition duration-300 relative group">
+          <div class="w-12 h-12 rounded-xl bg-red-100 text-red-700 flex items-center justify-center text-2xl mb-5 group-hover:scale-110 transition">
+            <i class="ph-bold ph-globe-hemisphere-west"></i>
+          </div>
+          <h4 class="font-bold text-lg text-stone-900 mb-2">Thách Thức Tiếp Cận Ngoại Tỉnh</h4>
+          <p class="text-sm text-stone-600 leading-relaxed">
+            Trước đây, bưởi Tân Triều và điều Xuân Lộc chỉ tiêu thụ cục bộ hoặc qua thương lái ép giá. Khách phương xa muốn thưởng thức thường lo sợ mua nhầm hàng lai tạp, kém chất lượng.
+          </p>
+        </div>
+
+        <div class="bg-stone-50 rounded-2xl p-7 border border-stone-200 hover:border-brand-300 transition duration-300 relative group">
+          <div class="w-12 h-12 rounded-xl bg-brand-100 text-brand-700 flex items-center justify-center text-2xl mb-5 group-hover:scale-110 transition">
+            <i class="ph-bold ph-shield-check"></i>
+          </div>
+          <h4 class="font-bold text-lg text-stone-900 mb-2">Minh Bạch Nguồn Gốc Bằng QR</h4>
+          <p class="text-sm text-stone-600 leading-relaxed">
+            Mỗi quả bưởi và gói hạt điều đều có mã định danh số. Khách hàng chỉ cần quét điện thoại là thấy ngay: nhà vườn canh tác, ngày thu hoạch, chứng chỉ VietGAP và quy trình đóng gói.
+          </p>
+        </div>
+
+        <div class="bg-stone-50 rounded-2xl p-7 border border-stone-200 hover:border-brand-300 transition duration-300 relative group">
+          <div class="w-12 h-12 rounded-xl bg-amber-100 text-amber-800 flex items-center justify-center text-2xl mb-5 group-hover:scale-110 transition">
+            <i class="ph-bold ph-robot"></i>
+          </div>
+          <h4 class="font-bold text-lg text-stone-900 mb-2">Bán Hàng Tự Động 24/7 Với AI</h4>
+          <p class="text-sm text-stone-600 leading-relaxed">
+            Hệ thống AI Chatbot am hiểu tường tận đặc sản, tự động tư vấn độ ngọt bưởi, phối set quà tặng doanh nghiệp theo ngân sách và tự động đồng bộ đơn sang Zalo chỉ sau 1 chạm.
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 3 PRODUCT PILLARS (SẢN PHẨM CHỦ LỰC) -->
+  <section id="products" class="py-20 bg-stone-50">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="flex flex-col md:flex-row md:items-end justify-between mb-12 gap-4">
+        <div>
+          <span class="text-xs font-bold text-brand-600 uppercase tracking-widest">Đặc Sản Đồng Nai Tuyển Chọn</span>
+          <h2 class="font-serif-title text-3xl sm:text-4xl font-bold text-stone-900 mt-1">3 Sản Phẩm Chủ Lực OCOP</h2>
+        </div>
+        <div class="flex items-center gap-2">
+          <span class="text-xs bg-brand-100 text-brand-800 font-bold px-3 py-1.5 rounded-full flex items-center gap-1">
+            <i class="ph-fill ph-check-circle"></i> Đầy Đủ Giấy Tờ VSATTP
+          </span>
+        </div>
+      </div>
+
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+        
+        <!-- Product 1: Bưởi Tân Triều -->
+        <div class="bg-white rounded-2xl overflow-hidden border border-stone-200 shadow-sm hover:shadow-xl transition-all duration-300 flex flex-col">
+          <div class="h-56 bg-gradient-to-br from-lime-600 to-emerald-800 relative p-6 flex flex-col justify-between text-white">
+            <div class="flex items-center justify-between">
+              <span class="bg-white/20 backdrop-blur-md px-3 py-1 rounded-full text-xs font-semibold">Cù Lao Tân Triều</span>
+              <span class="bg-amber-400 text-stone-900 font-bold text-xs px-2.5 py-0.5 rounded">OCOP 4 Sao</span>
+            </div>
+            <div>
+              <div class="text-xs text-lime-200 font-semibold mb-1">Mã sản phẩm: TT-POMELO</div>
+              <h3 class="font-serif-title text-2xl font-bold">Bưởi Đường Lá Cam</h3>
+            </div>
+          </div>
+          <div class="p-6 flex-1 flex flex-col justify-between space-y-5">
+            <div>
+              <p class="text-sm text-stone-600 line-clamp-3">
+                Được nuôi dưỡng bởi phù sa sông Đồng Nai, bưởi Tân Triều có vỏ màu xanh vàng khi chín, múi mọng không sượng, vị ngọt đượm thanh tao không đắng hậu.
+              </p>
+              
+              <div class="mt-4 pt-4 border-t border-stone-100 space-y-2 text-xs text-stone-500">
+                <div class="flex justify-between">
+                  <span>Trọng lượng:</span>
+                  <span class="font-semibold text-stone-800">1.2kg - 1.5kg / trái</span>
+                </div>
+                <div class="flex justify-between">
+                  <span>Độ ngọt (Brix):</span>
+                  <span class="font-semibold text-stone-800">12.5 - 13.5°</span>
+                </div>
+                <div class="flex justify-between">
+                  <span>Bảo quản:</span>
+                  <span class="font-semibold text-stone-800">Để thoáng 20-30 ngày</span>
+                </div>
+              </div>
+            </div>
+
+            <div class="pt-2">
+              <div class="flex items-baseline justify-between mb-4">
+                <span class="text-xs text-stone-500">Giá tại vườn:</span>
+                <span class="text-2xl font-bold text-brand-700">85.000đ <span class="text-xs text-stone-500 font-normal">/kg</span></span>
+              </div>
+              <div class="grid grid-cols-2 gap-2">
+                <button onclick="openQrModal('TAN-TRIEU-01')" class="w-full bg-stone-100 hover:bg-stone-200 text-stone-700 py-2.5 rounded-xl font-semibold text-xs transition flex items-center justify-center gap-1.5">
+                  <i class="ph-bold ph-qr-code text-sm"></i>
+                  Xem Mã QR
+                </button>
+                <button onclick="addToCart('Bưởi Đường Lá Cam Tân Triều', 85000)" class="w-full bg-brand-600 hover:bg-brand-700 text-white py-2.5 rounded-xl font-semibold text-xs transition">
+                  Đặt Mua Ngay
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Product 2: Hạt Điều Rang Củi -->
+        <div class="bg-white rounded-2xl overflow-hidden border border-stone-200 shadow-sm hover:shadow-xl transition-all duration-300 flex flex-col">
+          <div class="h-56 bg-gradient-to-br from-amber-700 to-amber-900 relative p-6 flex flex-col justify-between text-white">
+            <div class="flex items-center justify-between">
+              <span class="bg-white/20 backdrop-blur-md px-3 py-1 rounded-full text-xs font-semibold">Xuân Lộc - Định Quán</span>
+              <span class="bg-amber-400 text-stone-900 font-bold text-xs px-2.5 py-0.5 rounded">Xuất Khẩu Loại A</span>
+            </div>
+            <div>
+              <div class="text-xs text-amber-200 font-semibold mb-1">Mã sản phẩm: XL-CASHEW</div>
+              <h3 class="font-serif-title text-2xl font-bold">Hạt Điều Lụa Rang Củi</h3>
+            </div>
+          </div>
+          <div class="p-6 flex-1 flex flex-col justify-between space-y-5">
+            <div>
+              <p class="text-sm text-stone-600 line-clamp-3">
+                Thu hoạch từ thủ phủ điều đất đỏ bazan Đồng Nai. Phương pháp rang củi truyền thống giữ trọn lớp vỏ lụa, vị giòn rụm béo ngậy tự nhiên không gắt dầu.
+              </p>
+              
+              <div class="mt-4 pt-4 border-t border-stone-100 space-y-2 text-xs text-stone-500">
+                <div class="flex justify-between">
+                  <span>Quy cách:</span>
+                  <span class="font-semibold text-stone-800">Hộp hút chân không 500g</span>
+                </div>
+                <div class="flex justify-between">
+                  <span>Tiêu chuẩn hạt:</span>
+                  <span class="font-semibold text-stone-800">Size W240 (Hạt cồ loại 1)</span>
+                </div>
+                <div class="flex justify-between">
+                  <span>Hạn sử dụng:</span>
+                  <span class="font-semibold text-stone-800">12 tháng nguyên seal</span>
+                </div>
+              </div>
+            </div>
+
+            <div class="pt-2">
+              <div class="flex items-baseline justify-between mb-4">
+                <span class="text-xs text-stone-500">Hộp cao cấp:</span>
+                <span class="text-2xl font-bold text-brand-700">165.000đ <span class="text-xs text-stone-500 font-normal">/hộp 500g</span></span>
+              </div>
+              <div class="grid grid-cols-2 gap-2">
+                <button onclick="openQrModal('CASHEW-02')" class="w-full bg-stone-100 hover:bg-stone-200 text-stone-700 py-2.5 rounded-xl font-semibold text-xs transition flex items-center justify-center gap-1.5">
+                  <i class="ph-bold ph-qr-code text-sm"></i>
+                  Xem Mã QR
+                </button>
+                <button onclick="addToCart('Hạt Điều Lụa Rang Củi (Hộp 500g)', 165000)" class="w-full bg-brand-600 hover:bg-brand-700 text-white py-2.5 rounded-xl font-semibold text-xs transition">
+                  Đặt Mua Ngay
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Product 3: Mãng Cầu Dai -->
+        <div class="bg-white rounded-2xl overflow-hidden border border-stone-200 shadow-sm hover:shadow-xl transition-all duration-300 flex flex-col">
+          <div class="h-56 bg-gradient-to-br from-teal-700 to-emerald-900 relative p-6 flex flex-col justify-between text-white">
+            <div class="flex items-center justify-between">
+              <span class="bg-white/20 backdrop-blur-md px-3 py-1 rounded-full text-xs font-semibold">Thạnh Phú - Vĩnh Cửu</span>
+              <span class="bg-amber-400 text-stone-900 font-bold text-xs px-2.5 py-0.5 rounded">Chuẩn VietGAP</span>
+            </div>
+            <div>
+              <div class="text-xs text-teal-200 font-semibold mb-1">Mã sản phẩm: TP-ANNONA</div>
+              <h3 class="font-serif-title text-2xl font-bold">Mãng Cầu Dai Đồng Nai</h3>
+            </div>
+          </div>
+          <div class="p-6 flex-1 flex flex-col justify-between space-y-5">
+            <div>
+              <p class="text-sm text-stone-600 line-clamp-3">
+                Thịt trái dai giòn, ít hạt, vị ngọt thanh tự nhiên và hương thơm quyến rũ. Vườn trồng theo tiêu chuẩn vi sinh hữu cơ, không dư lượng thuốc BVTV.
+              </p>
+              
+              <div class="mt-4 pt-4 border-t border-stone-100 space-y-2 text-xs text-stone-500">
+                <div class="flex justify-between">
+                  <span>Trọng lượng:</span>
+                  <span class="font-semibold text-stone-800">400g - 600g / trái</span>
+                </div>
+                <div class="flex justify-between">
+                  <span>Đặc tính:</span>
+                  <span class="font-semibold text-stone-800">Múi dai dày, dễ bóc vỏ</span>
+                </div>
+                <div class="flex justify-between">
+                  <span>Mùa vụ:</span>
+                  <span class="font-semibold text-stone-800">Thu hoạch hàng tuần</span>
+                </div>
+              </div>
+            </div>
+
+            <div class="pt-2">
+              <div class="flex items-baseline justify-between mb-4">
+                <span class="text-xs text-stone-500">Giá tuyển chọn:</span>
+                <span class="text-2xl font-bold text-brand-700">75.000đ <span class="text-xs text-stone-500 font-normal">/kg</span></span>
+              </div>
+              <div class="grid grid-cols-2 gap-2">
+                <button onclick="openQrModal('CUSTARD-03')" class="w-full bg-stone-100 hover:bg-stone-200 text-stone-700 py-2.5 rounded-xl font-semibold text-xs transition flex items-center justify-center gap-1.5">
+                  <i class="ph-bold ph-qr-code text-sm"></i>
+                  Xem Mã QR
+                </button>
+                <button onclick="addToCart('Mãng Cầu Dai Chuẩn Hữu Cơ', 75000)" class="w-full bg-brand-600 hover:bg-brand-700 text-white py-2.5 rounded-xl font-semibold text-xs transition">
+                  Đặt Mua Ngay
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- QR TRACEABILITY SPOTLIGHT (MINH BẠCH NGUỒN GỐC) -->
+  <section id="traceability" class="py-20 bg-stone-900 text-white relative overflow-hidden">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+      <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
+        
+        <div class="lg:col-span-6 space-y-6">
+          <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-emerald-500/20 text-emerald-400 border border-emerald-500/30 text-xs font-semibold">
+            <i class="ph-bold ph-barcode"></i> Chuẩn GS1 & Cổng Dữ Liệu Truy Xuất Quốc Gia
+          </div>
+          <h2 class="font-serif-title text-3xl sm:text-4xl lg:text-5xl font-bold leading-tight">
+            Minh Bạch Tuyệt Đối <br>
+            <span class="text-brand-accent">Mỗi Trái Cây Đều Có "Căn Cước"</span>
+          </h2>
+          <p class="text-stone-300 text-sm sm:text-base leading-relaxed">
+            Nỗi lo mua phải bưởi thải loại hoặc nông sản ngâm thuốc biến mất hoàn toàn. Quét mã QR dán trên từng quả bưởi và hộp sản phẩm để xem toàn bộ lịch trình từ lúc ra hoa đến ngày hái.
+          </p>
+
+          <div class="space-y-4 pt-2">
+            <div class="flex items-start gap-4">
+              <div class="w-10 h-10 rounded-xl bg-brand-600/30 border border-brand-500/40 flex items-center justify-center text-brand-400 flex-shrink-0">
+                <i class="ph-bold ph-map-pin text-xl"></i>
+              </div>
+              <div>
+                <h4 class="font-bold text-sm text-stone-100">Định Vị Tọa Độ Vùng Trồng</h4>
+                <p class="text-xs text-stone-400">Xem chính xác thửa đất, diện tích vườn và thông tin chủ vườn tại cù lao Tân Triều.</p>
+              </div>
+            </div>
+
+            <div class="flex items-start gap-4">
+              <div class="w-10 h-10 rounded-xl bg-amber-500/20 border border-amber-500/30 flex items-center justify-center text-amber-400 flex-shrink-0">
+                <i class="ph-bold ph-calendar-check text-xl"></i>
+              </div>
+              <div>
+                <h4 class="font-bold text-sm text-stone-100">Nhật Ký Canh Tác Điện Tử</h4>
+                <p class="text-xs text-stone-400">Thời điểm bón phân hữu cơ, nguồn nước tưới và ngày ngắt trái được ghi nhận theo thời gian thực.</p>
+              </div>
+            </div>
+
+            <div class="flex items-start gap-4">
+              <div class="w-10 h-10 rounded-xl bg-sky-500/20 border border-sky-500/30 flex items-center justify-center text-sky-400 flex-shrink-0">
+                <i class="ph-bold ph-certificate text-xl"></i>
+              </div>
+              <div>
+                <h4 class="font-bold text-sm text-stone-100">Chứng Chỉ Kiểm Định Không Hóa Chất</h4>
+                <p class="text-xs text-stone-400">Tải trực tiếp phiếu kiểm nghiệm dư lượng Nitrat và thuốc BVTV đạt chuẩn an toàn thực phẩm.</p>
+              </div>
+            </div>
+          </div>
+
+          <div class="pt-4">
+            <button onclick="openQrModal('TAN-TRIEU-01')" class="bg-gradient-to-r from-brand-600 to-emerald-600 hover:from-brand-500 hover:to-emerald-500 text-white font-bold px-6 py-3.5 rounded-xl shadow-lg shadow-brand-600/30 flex items-center gap-2">
+              <i class="ph-bold ph-scan"></i>
+              <span>Trải Nghiệm Quét Tem Truy Xuất Trực Tuyến</span>
+            </button>
+          </div>
+        </div>
+
+        <!-- Interactive QR Mockup Device -->
+        <div class="lg:col-span-6 flex justify-center">
+          <div class="w-full max-w-md bg-stone-800 border border-stone-700 rounded-3xl p-6 shadow-2xl relative">
+            <div class="flex items-center justify-between pb-4 border-b border-stone-700">
+              <div class="flex items-center gap-2">
+                <span class="w-3 h-3 rounded-full bg-red-500 inline-block"></span>
+                <span class="w-3 h-3 rounded-full bg-yellow-500 inline-block"></span>
+                <span class="w-3 h-3 rounded-full bg-green-500 inline-block"></span>
+              </div>
+              <span class="text-xs text-stone-400 font-mono">dongnai-trace.gov.vn</span>
+            </div>
+
+            <div class="py-6 text-center space-y-4">
+              <div class="w-48 h-48 mx-auto bg-white p-3 rounded-2xl shadow-inner flex items-center justify-center">
+                <img src="https://api.qrserver.com/v1/create-qr-code/?size=250x250&data=https://htx-nongsan-dongnai.vn/trace/tan-trieu-2026-batch09" alt="Mã QR Truy Xuất Nguồn Gốc" class="w-full h-full object-contain">
+              </div>
+              <div class="text-xs font-mono text-emerald-400 bg-emerald-950/60 border border-emerald-800 py-1.5 px-3 rounded-full inline-block">
+                ID: VN-ĐNAI-TT-202609-0891
+              </div>
+              <p class="text-xs text-stone-300">
+                Dùng camera Zalo hoặc iPhone/Android quét trực tiếp mã trên để tra cứu hồ sơ lô bưởi hiện tại.
+              </p>
+            </div>
+
+            <div class="bg-stone-900/80 rounded-xl p-4 border border-stone-700/60 text-xs space-y-2">
+              <div class="flex justify-between text-stone-400">
+                <span>Vườn canh tác:</span>
+                <span class="text-white font-medium">HTX Bưởi Tân Triều - Cù Lao Vĩnh Cửu</span>
+              </div>
+              <div class="flex justify-between text-stone-400">
+                <span>Ngày thu hái:</span>
+                <span class="text-white font-medium">24/09/2026 (Hái lứa sớm sáng tinh mơ)</span>
+              </div>
+              <div class="flex justify-between text-stone-400">
+                <span>Độ đường trung bình:</span>
+                <span class="text-emerald-400 font-bold">13.2° Brix (Rất ngọt thanh)</span>
+              </div>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- AI CONSULTATION & COMBO GENERATOR (ỨNG DỤNG AI THỰC TẾ) -->
+  <section id="ai-consultant" class="py-20 bg-gradient-to-b from-stone-50 to-brand-50/40">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      
+      <div class="text-center max-w-3xl mx-auto mb-12">
+        <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-brand-100 text-brand-800 text-xs font-bold mb-3">
+          <i class="ph-fill ph-sparkle text-brand-accent"></i> Đột Phá AI Trợ Lý Tư Vấn
+        </div>
+        <h2 class="font-serif-title text-3xl sm:text-4xl font-bold text-stone-900">
+          Chuyên Gia AI Tư Vấn Bưởi Ngon & Phối Quà Biếu
+        </h2>
+        <p class="text-stone-600 text-sm sm:text-base mt-3">
+          Không chắc bưởi da xanh hay bưởi đường lá cam hợp vị gia đình? Cần set quà đối tác ngân sách từ 500k đến 2 triệu? Nhận tư vấn chuẩn xác ngay lập tức.
+        </p>
+      </div>
+
+      <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 items-start">
+        
+        <!-- Interactive Smart Advisor Tool -->
+        <div class="lg:col-span-7 bg-white rounded-3xl p-6 sm:p-8 border border-stone-200 shadow-xl space-y-6">
+          <h3 class="font-bold text-lg text-stone-900 flex items-center gap-2">
+            <i class="ph-fill ph-sliders text-brand-600"></i>
+            Tự Động Tạo Combo Quà Tặng Theo Nhu Cầu
+          </h3>
+
+          <div class="space-y-4">
+            <div>
+              <label class="block text-xs font-bold uppercase tracking-wider text-stone-600 mb-2">1. Mục đích của bạn là gì?</label>
+              <div class="grid grid-cols-3 gap-2" id="purposeGroup">
+                <button type="button" onclick="selectPurpose(this, 'bieu-tang')" class="purpose-btn border-2 border-brand-600 bg-brand-50 text-brand-800 font-semibold py-2 px-3 rounded-xl text-xs text-center transition">
+                  🎁 Biếu Tặng Sếp / Đối Tác
+                </button>
+                <button type="button" onclick="selectPurpose(this, 'gia-dinh')" class="purpose-btn border border-stone-300 hover:border-brand-500 py-2 px-3 rounded-xl text-xs text-center font-medium transition">
+                  🏡 Thưởng Thức Gia Đình
+                </button>
+                <button type="button" onclick="selectPurpose(this, 'chua-tri')" class="purpose-btn border border-stone-300 hover:border-brand-500 py-2 px-3 rounded-xl text-xs text-center font-medium transition">
+                  🌿 Dinh Dưỡng / Ăn Kiêng
+                </button>
+              </div>
+            </div>
+
+            <div>
+              <label class="block text-xs font-bold uppercase tracking-wider text-stone-600 mb-2">2. Khoảng ngân sách dự kiến:</label>
+              <div class="grid grid-cols-3 gap-2" id="budgetGroup">
+                <button type="button" onclick="selectBudget(this, '300-500')" class="budget-btn border border-stone-300 hover:border-brand-500 py-2 px-3 rounded-xl text-xs text-center font-medium transition">
+                  300.000đ - 500.000đ
+                </button>
+                <button type="button" onclick="selectBudget(this, '500-1000')" class="budget-btn border-2 border-brand-600 bg-brand-50 text-brand-800 font-semibold py-2 px-3 rounded-xl text-xs text-center transition">
+                  500.000đ - 1.000.000đ (Phổ biến)
+                </button>
+                <button type="button" onclick="selectBudget(this, '1000-plus')" class="budget-btn border border-stone-300 hover:border-brand-500 py-2 px-3 rounded-xl text-xs text-center font-medium transition">
+                  Trên 1.000.000đ (Vip)
+                </button>
+              </div>
+            </div>
+
+            <div>
+              <label class="block text-xs font-bold uppercase tracking-wider text-stone-600 mb-2">3. Điểm giao hàng:</label>
+              <select id="destination" class="w-full text-xs sm:text-sm border border-stone-300 rounded-xl px-4 py-3 focus:outline-none focus:border-brand-600 bg-stone-50">
+                <option value="mien-bac">Khu vực Miền Bắc (Hà Nội, Hải Phòng... - Cần bưởi bảo quản tốt khi đi xa)</option>
+                <option value="mien-trung">Khu vực Miền Trung (Đà Nẵng, Huế...)</option>
+                <option value="mien-nam" selected>Khu vực TP.HCM & Đông Nam Bộ (Giao hỏa tốc 4-12 tiếng)</option>
+              </select>
+            </div>
+
+            <button onclick="generateAiCombo()" class="w-full bg-brand-700 hover:bg-brand-800 text-white font-bold py-3.5 rounded-xl shadow-lg shadow-brand-700/25 flex items-center justify-center gap-2 transition">
+              <i class="ph-bold ph-magic-wand text-lg text-amber-300"></i>
+              <span>AI Tính Toán Combo Hoàn Hảo Cho Bạn</span>
+            </button>
+          </div>
+
+          <!-- Dynamic Output Box -->
+          <div id="aiOutputBox" class="p-5 bg-stone-50 border border-brand-200 rounded-2xl space-y-3">
+            <div class="flex items-center gap-2 text-brand-700 font-bold text-sm">
+              <i class="ph-fill ph-sparkle text-brand-accent"></i>
+              <span id="comboTitle">Combo Quà Biếu "Đất Đồng Nai Sum Vầy"</span>
+            </div>
+            <p id="comboDesc" class="text-xs sm:text-sm text-stone-600 leading-relaxed">
+              Gợi ý phù hợp nhất: <strong>02 Quả Bưởi Đường Lá Cam tuyển chọn</strong> (vỏ xanh ngả vàng trang trọng, cuống tươi lá xanh ngắt) kết hợp cùng <strong>02 Hộp Điều Lụa Rang Củi 500g</strong> đóng hộp thiếc sơn mài sang trọng. Thích hợp đi đường xa, bưởi để càng lâu càng xuống nước ngọt lịm.
+            </p>
+            <div class="flex items-center justify-between pt-2 border-t border-stone-200">
+              <span class="text-xs text-stone-500">Giá trọn gói ưu đãi:</span>
+              <span id="comboPrice" class="text-xl font-bold text-brand-700">620.000đ <span class="text-xs text-emerald-600 font-semibold">(Tiết kiệm 45k)</span></span>
+            </div>
+            <button onclick="applyComboToCart()" class="w-full bg-brand-600 hover:bg-brand-700 text-white font-semibold py-2.5 rounded-xl text-xs transition">
+              Chọn Combo Này & Đến Form Đặt Hàng &rarr;
+            </button>
+          </div>
+
+        </div>
+
+        <!-- Chatbot Demo Simulation Window -->
+        <div class="lg:col-span-5 bg-white rounded-3xl border border-stone-200 shadow-xl overflow-hidden flex flex-col h-[520px]">
+          <div class="bg-brand-700 p-4 text-white flex items-center justify-between">
+            <div class="flex items-center gap-3">
+              <div class="w-9 h-9 rounded-full bg-white/20 flex items-center justify-center text-lg">
+                <i class="ph-fill ph-robot text-amber-300"></i>
+              </div>
+              <div>
+                <h4 class="font-bold text-sm">Bé Ba - Trợ Lý AI Đồng Nai</h4>
+                <div class="flex items-center gap-1.5 text-[11px] text-brand-200">
+                  <span class="w-2 h-2 rounded-full bg-emerald-400"></span> Trực tuyến 24/7 (Zalo & Web)
+                </div>
+              </div>
+            </div>
+            <span class="text-xs bg-white/10 px-2.5 py-1 rounded-full">AI 2.0</span>
+          </div>
+
+          <!-- Messages Container -->
+          <div id="chatMessages" class="flex-1 p-4 overflow-y-auto space-y-3 custom-scrollbar text-xs">
+            <div class="flex items-start gap-2.5">
+              <div class="w-7 h-7 rounded-full bg-brand-600 text-white flex items-center justify-center text-xs flex-shrink-0">
+                AI
+              </div>
+              <div class="bg-stone-100 text-stone-800 p-3 rounded-2xl rounded-tl-none max-w-[85%] leading-relaxed">
+                Dạ em chào anh/chị! Em là trợ lý ảo của Hợp tác xã Nông sản Đồng Nai. Anh/chị cần em hỗ trợ:
+                <br>• Cách phân biệt bưởi Tân Triều chính gốc
+                <br>• Tư vấn hộp quà tết, quà biếu doanh nghiệp
+                <br>• Báo giá vận chuyển ra Hà Nội / miền Bắc ạ?
+              </div>
+            </div>
+
+            <div class="flex justify-end">
+              <div class="bg-brand-600 text-white p-3 rounded-2xl rounded-tr-none max-w-[80%] leading-relaxed">
+                Bưởi gửi ra ngoài Hà Nội thì loại nào ngọt và để được lâu vậy em?
+              </div>
+            </div>
+
+            <div class="flex items-start gap-2.5">
+              <div class="w-7 h-7 rounded-full bg-brand-600 text-white flex items-center justify-center text-xs flex-shrink-0">
+                AI
+              </div>
+              <div class="bg-stone-100 text-stone-800 p-3 rounded-2xl rounded-tl-none max-w-[85%] leading-relaxed">
+                Dạ với khách gửi ra Hà Nội hoặc miền Bắc, em khuyên chọn <strong>Bưởi Đường Lá Cam Tân Triều</strong> loại 1 ạ!
+                <br><br>Ưu điểm:
+                <br>1. Vỏ mỏng, cuống còn tươi xanh hái trước giờ gửi 3 tiếng.
+                <br>2. Càng để 10-15 ngày sau khi hái, bưởi xuống nước thì vị ngọt sẽ càng đậm đà thanh tao, hoàn toàn không sợ úng hay khô tép!
+              </div>
+            </div>
+          </div>
+
+          <!-- Input bar with quick prompts -->
+          <div class="p-3 border-t border-stone-200 bg-stone-50">
+            <!-- Quick prompt chips -->
+            <div id="chatQuickPrompts" class="mb-2"></div>
+
+            <div class="flex gap-2">
+              <input type="text" id="userChatInput" placeholder="Nhập câu hỏi (Ví dụ: giá sỉ bưởi, hạt điều có cay không?)..." class="flex-1 text-xs border border-stone-300 rounded-xl px-3 py-2.5 focus:outline-none focus:border-brand-600 bg-white" onkeydown="if(event.key==='Enter') sendChatMessage()">
+              <button onclick="sendChatMessage()" class="bg-brand-600 hover:bg-brand-700 text-white px-4 py-2.5 rounded-xl font-bold transition flex items-center justify-center">
+                <i class="ph-bold ph-paper-plane-right text-sm"></i>
+              </button>
+            </div>
+            <div class="flex items-center justify-between mt-2 text-[10px] text-stone-400">
+              <span>Được huấn luyện trên dữ liệu HTX Nông Sản Đồng Nai</span>
+              <button onclick="quickFillPrompt('Tư vấn hộp quà 800k')" class="underline hover:text-brand-600">Thử: Hộp quà 800k</button>
+            </div>
+          </div>
+
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ORDER & ZALO CHECKOUT SECTION -->
+  <section id="order" class="py-16 bg-white border-t border-stone-200">
+    <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+      
+      <div class="text-center mb-10">
+        <span class="text-xs font-bold text-brand-600 uppercase tracking-widest">Đặt Hàng Minh Bạch 24/7</span>
+        <h2 class="font-serif-title text-3xl font-bold text-stone-900 mt-1">Thông Tin Đơn Hàng & Giao Nhận</h2>
+        <p class="text-xs sm:text-sm text-stone-500 mt-2">Đơn hàng sẽ được tự động đồng bộ sang Zalo OA để gửi xác nhận và mã vận đơn hỏa tốc.</p>
+      </div>
+
+      <div class="bg-stone-50 rounded-3xl p-6 sm:p-8 border border-stone-200 shadow-lg space-y-6">
+        
+        <!-- Cart Summary with Freeship & Voucher -->
+        <div class="bg-white p-5 rounded-3xl border border-stone-200 space-y-4">
+          
+          <!-- Freeship Progress Bar -->
+          <div class="bg-brand-50/70 border border-brand-200/80 rounded-2xl p-3.5 space-y-2">
+            <div class="flex items-center justify-between text-xs">
+              <span class="flex items-center gap-1.5 font-bold text-brand-800">
+                <i class="ph-fill ph-truck text-brand-600 text-sm"></i>
+                <span id="freeshipText">Mua thêm đặc sản để nhận Freeship toàn quốc!</span>
+              </span>
+              <span class="font-bold text-brand-700 text-[11px]">Đơn từ 500k</span>
+            </div>
+            <div class="w-full h-2 bg-stone-200 rounded-full overflow-hidden">
+              <div id="freeshipProgressBar" class="h-full bg-gradient-to-r from-brand-500 to-emerald-500 transition-all duration-300" style="width: 22%;"></div>
+            </div>
+          </div>
+
+          <div class="flex items-center justify-between pb-2 border-b border-stone-100">
+            <span class="font-bold text-sm text-stone-800">Sản phẩm trong giỏ:</span>
+            <button onclick="clearCart()" class="text-xs text-red-600 hover:underline">Xóa tất cả</button>
+          </div>
+          
+          <div id="cartItemsList" class="space-y-1 text-xs">
+            <!-- Render dynamically from cart.js with (+ / -) -->
+          </div>
+
+          <!-- Voucher Coupon Input -->
+          <div class="pt-3 border-t border-stone-100">
+            <div class="flex gap-2">
+              <input type="text" id="voucherInput" placeholder="Nhập mã ưu đãi (Thử: DONGNAI10, FREESHIP)..." class="flex-1 text-xs uppercase border border-stone-300 rounded-xl px-3 py-2 bg-stone-50 focus:outline-none focus:border-brand-600 font-mono">
+              <button type="button" onclick="applyVoucherCode()" class="bg-stone-800 hover:bg-stone-900 text-white px-4 py-2 rounded-xl text-xs font-bold transition">
+                Áp Dụng
+              </button>
+            </div>
+            <div id="voucherMessage" class="hidden"></div>
+          </div>
+
+          <!-- Total Calculation Breakdown -->
+          <div class="pt-3 border-t border-stone-100 space-y-1.5 text-xs text-stone-600">
+            <div class="flex justify-between">
+              <span>Phí vận chuyển dự kiến (Toàn quốc):</span>
+              <span id="cartShippingFee" class="font-semibold text-stone-800">35.000đ</span>
+            </div>
+            <div id="cartDiscountRow" class="flex justify-between hidden">
+              <!-- Render discount if voucher applied -->
+            </div>
+            <div class="flex justify-between items-center pt-2 border-t border-stone-100 font-bold text-base text-stone-900">
+              <span>Tổng thanh toán:</span>
+              <span id="cartTotalPrice" class="text-brand-700 text-xl font-extrabold">145.000đ</span>
+            </div>
+          </div>
+
+        </div>
+
+        <form id="orderForm" onsubmit="handleOrderSubmit(event)" class="space-y-4">
+          <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+            <div>
+              <label class="block text-xs font-semibold text-stone-700 mb-1">Họ và tên người nhận *</label>
+              <input type="text" id="custName" required placeholder="Nguyễn Văn A" class="w-full text-xs sm:text-sm border border-stone-300 rounded-xl px-3.5 py-2.5 focus:outline-none focus:border-brand-600 bg-white">
+            </div>
+            <div>
+              <label class="block text-xs font-semibold text-stone-700 mb-1">Số điện thoại (Nhận mã Zalo) *</label>
+              <input type="tel" id="custPhone" required placeholder="0912 345 678" class="w-full text-xs sm:text-sm border border-stone-300 rounded-xl px-3.5 py-2.5 focus:outline-none focus:border-brand-600 bg-white">
+            </div>
+          </div>
+
+          <div>
+            <label class="block text-xs font-semibold text-stone-700 mb-1">Địa chỉ nhận hàng chi tiết *</label>
+            <input type="text" id="custAddress" required placeholder="Số nhà, tên đường, phường/xã, quận/huyện, tỉnh/thành..." class="w-full text-xs sm:text-sm border border-stone-300 rounded-xl px-3.5 py-2.5 focus:outline-none focus:border-brand-600 bg-white">
+          </div>
+
+          <div>
+            <label class="block text-xs font-semibold text-stone-700 mb-1">Ghi chú thêm (Chọn bưởi da xanh/lá cam, đóng gói làm quà...)</label>
+            <textarea id="custNotes" rows="2" placeholder="Ví dụ: Cần đóng thùng xốp lót rơm gửi máy bay ra Hà Nội..." class="w-full text-xs sm:text-sm border border-stone-300 rounded-xl px-3.5 py-2.5 focus:outline-none focus:border-brand-600 bg-white"></textarea>
+          </div>
+
+          <!-- Payment Method Choice -->
+          <div>
+            <label class="block text-xs font-semibold text-stone-700 mb-2">Phương thức thanh toán *</label>
+            <div class="grid grid-cols-1 sm:grid-cols-2 gap-3">
+              <label class="flex items-center gap-3 p-3.5 border-2 border-brand-600 bg-brand-50/50 rounded-2xl cursor-pointer">
+                <input type="radio" name="paymentMethod" value="cod" checked onchange="updateVietQR(0)" class="text-brand-600 focus:ring-brand-500">
+                <div>
+                  <div class="text-xs font-bold text-stone-800">Thanh toán khi nhận hàng (COD)</div>
+                  <div class="text-[11px] text-stone-500">Được kiểm tra bưởi & thử hạt điều trước khi trả tiền</div>
+                </div>
+              </label>
+              <label class="flex items-center gap-3 p-3.5 border border-stone-200 bg-white hover:border-brand-500 rounded-2xl cursor-pointer">
+                <input type="radio" name="paymentMethod" value="banking" onchange="renderCart()" class="text-brand-600 focus:ring-brand-500">
+                <div>
+                  <div class="text-xs font-bold text-stone-800">Chuyển khoản VietQR 24/7</div>
+                  <div class="text-[11px] text-stone-500">Quét mã QR tự động điền số tiền & xác nhận tức thì</div>
+                </div>
+              </label>
+            </div>
+          </div>
+
+          <!-- VietQR Instant Transfer Section (Hidden by default) -->
+          <div id="vietQrSection" class="p-4 bg-emerald-50 border border-emerald-200 rounded-2xl space-y-3 hidden">
+            <div class="flex items-center justify-between text-xs text-emerald-800 font-bold">
+              <span>Mã VietQR Ngân Hàng HTX Đặc Sản Đồng Nai</span>
+              <span class="bg-emerald-200 text-emerald-900 px-2 py-0.5 rounded text-[10px]">MB Bank</span>
+            </div>
+            <div class="flex flex-col sm:flex-row items-center gap-4">
+              <div class="w-36 h-36 bg-white p-2 rounded-xl border border-emerald-200 shadow-sm flex-shrink-0">
+                <img id="vietQrImage" src="" alt="Mã VietQR" class="w-full h-full object-contain">
+              </div>
+              <div class="text-xs text-stone-700 space-y-1">
+                <div><strong>Ngân hàng:</strong> MB Bank (Quân Đội)</div>
+                <div><strong>Số tài khoản:</strong> <span class="font-mono font-bold text-brand-700">0988 888 888</span></div>
+                <div><strong>Chủ tài khoản:</strong> HTX NONG SAN DONG NAI</div>
+                <div class="text-[11px] text-emerald-700 pt-1">
+                  💡 Mở app ngân hàng bất kỳ (Vietcombank, MB, Techcombank, MoMo...) quét mã trên, số tiền và nội dung sẽ được điền tự động!
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="pt-2">
+            <button type="submit" class="w-full bg-brand-600 hover:bg-brand-700 text-white font-bold py-3.5 rounded-xl shadow-lg shadow-brand-600/30 flex items-center justify-center gap-2 transition hover:-translate-y-0.5">
+              <i class="ph-bold ph-check-circle text-lg"></i>
+              <span>Hoàn Tất Đặt Hàng & Nhận Xác Nhận Qua Zalo</span>
+            </button>
+            <p class="text-center text-[11px] text-stone-500 mt-2">
+              Bảo hành 1 đổi 1 tận tay nếu bưởi bị khô sượng hoặc hạt điều bị ẩm mốc.
+            </p>
+          </div>
+        </form>
+
+      </div>
+
+    </div>
+  </section>
+  <!-- FOOTER -->
+  <footer class="bg-stone-900 text-stone-400 py-12 text-xs border-t border-stone-800">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 grid grid-cols-1 md:grid-cols-4 gap-8">
+      <div class="space-y-3">
+        <div class="flex items-center gap-2 text-white font-bold font-serif-title text-lg">
+          <i class="ph-bold ph-plant text-brand-500 text-2xl"></i>
+          <span>Nông Sản & Đặc Sản Đồng Nai</span>
+        </div>
+        <p class="text-stone-400 leading-relaxed">
+          Đại diện liên hiệp các HTX nông nghiệp sạch tỉnh Đồng Nai. Kết nối nông sản vườn nhà trực tiếp tới bàn ăn gia đình Việt.
+        </p>
+      </div>
+
+      <div>
+        <h4 class="text-white font-bold mb-3 uppercase tracking-wider">Vùng Trồng Chủ Lực</h4>
+        <ul class="space-y-2">
+          <li>Cù lao Bưởi Tân Triều (Vĩnh Cửu)</li>
+          <li>Vùng Điều Thổ Nhưỡng Đất Đỏ (Xuân Lộc)</li>
+          <li>Hợp tác xã Mãng Cầu Thạnh Phú</li>
+          <li>Hạt sen Long Thành & Chôm chôm Long Khánh</li>
+        </ul>
+      </div>
+
+      <div>
+        <h4 class="text-white font-bold mb-3 uppercase tracking-wider">Cam Kết Chất Lượng</h4>
+        <ul class="space-y-2">
+          <li>100% Mã QR định danh vườn trồng</li>
+          <li>Không chất bảo quản vỏ bưởi</li>
+          <li>Đổi trả miễn phí trong 48 giờ</li>
+          <li>Đóng thùng quà tặng tiêu chuẩn máy bay</li>
+        </ul>
+      </div>
+
+      <div>
+        <h4 class="text-white font-bold mb-3 uppercase tracking-wider">Liên Hệ HTX</h4>
+        <p>Địa chỉ: Hương Lộ 9, Xã Tân Bình, Huyện Vĩnh Cửu, Tỉnh Đồng Nai</p>
+        <p class="mt-2">Hotline/Zalo: <span class="htx-zalo-number font-bold text-white font-mono">0988.xxx.xxx</span> <button onclick="configureZaloPhone()" class="underline text-emerald-400 hover:text-white ml-1.5 text-[10px]">(Đổi số Zalo của bạn)</button></p>
+        <p class="mt-2">Email: lienhe@dacsandongnai.vn</p>
+      </div>
+    </div>
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 mt-10 pt-6 border-t border-stone-800 text-center text-stone-500">
+      © 2026 Hợp Tác Xã Nông Sản Đặc Sản Đồng Nai. Đề án Chuyển đổi số & Ứng dụng AI Nông nghiệp.
+    </div>
+  </footer>
+
+  <!-- QR MODAL POPUP -->
+  <div id="qrModal" class="fixed inset-0 z-50 bg-black/60 backdrop-blur-sm hidden flex items-center justify-center p-4">
+    <div class="bg-white rounded-3xl max-w-lg w-full p-6 sm:p-8 space-y-5 shadow-2xl relative animate-in fade-in zoom-in duration-200">
+      <button onclick="closeQrModal()" class="absolute top-5 right-5 text-stone-400 hover:text-stone-700 text-xl">
+        <i class="ph-bold ph-x"></i>
+      </button>
+
+      <div class="flex items-center gap-3">
+        <div class="w-10 h-10 rounded-xl bg-brand-100 text-brand-700 flex items-center justify-center text-xl">
+          <i class="ph-bold ph-shield-check"></i>
+        </div>
+        <div>
+          <h3 class="font-bold text-base text-stone-900" id="qrModalTitle">Chứng Nhận Nguồn Gốc Số</h3>
+          <p class="text-xs text-brand-700 font-medium">Hệ Thống Truy Xuất Nông Sản Chuẩn Quốc Gia</p>
+        </div>
+      </div>
+
+      <div class="bg-stone-50 rounded-2xl p-4 border border-stone-200 flex flex-col sm:flex-row items-center gap-5">
+        <div class="w-32 h-32 bg-white p-2 rounded-xl border border-stone-200 shadow-sm flex-shrink-0">
+          <img id="qrModalImg" src="" alt="Mã QR tra cứu" class="w-full h-full object-contain">
+        </div>
+        <div class="text-xs space-y-1.5 text-stone-600 w-full">
+          <div><strong class="text-stone-800">Mã Lô Hàng:</strong> <span id="qrModalCode" class="font-mono text-brand-700 font-bold"></span></div>
+          <div><strong class="text-stone-800">Chủ Hộ Vườn:</strong> <span id="qrModalOwner"></span></div>
+          <div><strong class="text-stone-800">Địa chỉ vườn:</strong> <span id="qrModalLocation"></span></div>
+          <div><strong class="text-stone-800">Tiêu chuẩn:</strong> <span class="bg-emerald-100 text-emerald-800 px-2 py-0.5 rounded font-semibold text-[10px]" id="qrModalStandard">VietGAP</span></div>
+        </div>
+      </div>
+
+      <div class="space-y-2 text-xs">
+        <h4 class="font-bold text-stone-800">Nhật Ký Thu Hoạch Số:</h4>
+        <div id="qrTimelineContainer" class="space-y-2 border-l-2 border-brand-500 pl-3">
+          <!-- Dynamic timeline items from data.js & qr-modal.js -->
+        </div>
+      </div>
+
+      <div class="pt-2">
+        <button onclick="closeQrModal()" class="w-full bg-stone-900 hover:bg-stone-800 text-white font-semibold py-2.5 rounded-xl text-xs transition">
+          Đóng Cửa Sổ Tra Cứu
+        </button>
+      </div>
+    </div>
+  </div>
+
+  <!-- FLOATING CHAT WIDGET TOGGLE BUTTON -->
+  <div class="fixed bottom-6 right-6 z-40">
+    <button onclick="toggleFloatingChat()" class="bg-gradient-to-r from-brand-600 to-emerald-600 hover:from-brand-500 hover:to-emerald-500 text-white p-4 rounded-full shadow-2xl flex items-center justify-center relative group transition hover:scale-105">
+      <i class="ph-bold ph-chat-teardrop-dots text-2xl"></i>
+      <span class="absolute -top-1 -right-1 w-3.5 h-3.5 bg-amber-400 border-2 border-white rounded-full"></span>
+      <div class="hidden group-hover:block absolute right-full mr-3 bg-stone-900 text-white text-xs px-3 py-1.5 rounded-lg whitespace-nowrap shadow-md">
+        Hỏi trợ lý AI 24/7
+      </div>
+    </button>
+  </div>
+
+  <!-- FLOATING CHAT WINDOW -->
+  <div id="floatingChatWindow" class="fixed bottom-20 right-6 z-50 w-[92vw] sm:w-[380px] bg-white rounded-3xl shadow-2xl border border-stone-200 overflow-hidden hidden flex flex-col h-[460px] animate-in fade-in slide-in-from-bottom-5">
+    <div class="bg-brand-700 text-white p-3.5 flex items-center justify-between">
+      <div class="flex items-center gap-2.5">
+        <div class="w-8 h-8 rounded-full bg-white/20 flex items-center justify-center">
+          <i class="ph-fill ph-robot text-amber-300"></i>
+        </div>
+        <div>
+          <h4 class="font-bold text-xs">Trợ Lý AI Nông Sản Đồng Nai</h4>
+          <span class="text-[10px] text-brand-200">Phản hồi tức thì</span>
+        </div>
+      </div>
+      <button onclick="toggleFloatingChat()" class="text-white hover:text-stone-300">
+        <i class="ph-bold ph-x text-base"></i>
+      </button>
+    </div>
+    
+    <div id="floatingChatMessages" class="flex-1 p-3 overflow-y-auto space-y-2.5 text-xs custom-scrollbar">
+      <div class="flex items-start gap-2">
+        <div class="w-6 h-6 rounded-full bg-brand-600 text-white flex items-center justify-center text-[10px] flex-shrink-0">AI</div>
+        <div class="bg-stone-100 p-2.5 rounded-xl rounded-tl-none max-w-[85%] text-stone-700">
+          Chào bạn! Bạn cần tư vấn chọn bưởi Tân Triều, hạt điều hay phối combo quà biếu nào hôm nay ạ?
+        </div>
+      </div>
+    </div>
+
+    <div id="floatingQuickPrompts" class="px-2.5 pt-1.5 bg-stone-50 border-t border-stone-200"></div>
+
+    <div class="p-2.5 bg-stone-50 flex gap-1.5">
+      <input type="text" id="floatingInput" placeholder="Hỏi AI..." class="flex-1 text-xs border border-stone-300 rounded-xl px-3 py-2 bg-white focus:outline-none focus:border-brand-600" onkeydown="if(event.key==='Enter') sendFloatingMessage()">
+      <button onclick="sendFloatingMessage()" class="bg-brand-600 text-white px-3 py-2 rounded-xl text-xs font-bold">
+        <i class="ph-bold ph-paper-plane-right"></i>
+      </button>
+    </div>
+  </div>
+
+  <!-- AUTH MODAL (ĐĂNG NHẬP / ĐĂNG KÝ) -->
+  <div id="authModal" class="fixed inset-0 z-50 bg-black/60 backdrop-blur-sm hidden flex items-center justify-center p-4">
+    <div class="bg-white rounded-3xl max-w-md w-full p-6 sm:p-8 space-y-5 shadow-2xl relative animate-in fade-in zoom-in duration-200">
+      <button onclick="closeAuthModal()" class="absolute top-5 right-5 text-stone-400 hover:text-stone-700 text-xl transition">
+        <i class="ph-bold ph-x"></i>
+      </button>
+
+      <div class="text-center space-y-1">
+        <div class="w-12 h-12 mx-auto rounded-2xl bg-gradient-to-tr from-brand-700 to-brand-500 text-white flex items-center justify-center text-2xl shadow-md shadow-brand-500/20 mb-2">
+          <i class="ph-bold ph-plant"></i>
+        </div>
+        <h3 class="font-serif-title text-2xl font-bold text-stone-900">Cổng Hội Viên Nông Sản</h3>
+        <p class="text-xs text-stone-500">Tích lũy điểm mùa vụ & Theo dõi đơn hàng đặc sản Đồng Nai</p>
+      </div>
+
+      <!-- Tab Switcher -->
+      <div class="flex border-b border-stone-200">
+        <button id="loginTabBtn" onclick="switchAuthTab('login')" class="w-1/2 py-2.5 text-center text-xs sm:text-sm font-bold border-b-2 border-brand-600 text-brand-700 transition">
+          Đăng Nhập
+        </button>
+        <button id="registerTabBtn" onclick="switchAuthTab('register')" class="w-1/2 py-2.5 text-center text-xs sm:text-sm font-medium border-b-2 border-transparent text-stone-500 hover:text-stone-800 transition">
+          Đăng Ký Mới
+        </button>
+      </div>
+
+      <!-- Login Form -->
+      <form id="loginForm" onsubmit="handleLogin(event)" class="space-y-4 pt-1">
+        <div>
+          <label class="block text-xs font-semibold text-stone-700 mb-1">Số điện thoại hoặc Email</label>
+          <input type="text" id="loginIdentifier" required placeholder="0912 345 678 hoặc email@domain.com" class="w-full text-xs sm:text-sm border border-stone-300 rounded-xl px-3.5 py-2.5 focus:outline-none focus:border-brand-600 bg-stone-50">
+        </div>
+
+        <div>
+          <div class="flex justify-between items-center mb-1">
+            <label class="text-xs font-semibold text-stone-700">Mật khẩu</label>
+            <a href="javascript:alert('Vui lòng liên hệ Hotline/Zalo HTX để cấp lại mật khẩu qua OTP.')" class="text-[11px] text-brand-600 hover:underline">Quên mật khẩu?</a>
+          </div>
+          <div class="relative">
+            <input type="password" id="loginPassword" required placeholder="••••••••" class="w-full text-xs sm:text-sm border border-stone-300 rounded-xl px-3.5 py-2.5 pr-10 focus:outline-none focus:border-brand-600 bg-stone-50">
+            <button type="button" onclick="togglePasswordVisibility('loginPassword', 'loginEyeIcon')" class="absolute right-3 top-1/2 -translate-y-1/2 text-stone-400 hover:text-stone-700 text-base">
+              <i id="loginEyeIcon" class="ph ph-eye"></i>
+            </button>
+          </div>
+        </div>
+
+        <button type="submit" class="w-full bg-brand-600 hover:bg-brand-700 text-white font-bold py-3 rounded-xl shadow-lg shadow-brand-600/30 text-xs sm:text-sm transition flex items-center justify-center gap-2">
+          <i class="ph-bold ph-sign-in"></i>
+          <span>Đăng Nhập Ngay</span>
+        </button>
+      </form>
+
+      <!-- Register Form -->
+      <form id="registerForm" onsubmit="handleRegister(event)" class="space-y-3.5 pt-1 hidden">
+        <div>
+          <label class="block text-xs font-semibold text-stone-700 mb-1">Họ và tên của bạn *</label>
+          <input type="text" id="regName" required placeholder="Nguyễn Văn A" class="w-full text-xs border border-stone-300 rounded-xl px-3 py-2 focus:outline-none focus:border-brand-600 bg-stone-50">
+        </div>
+
+        <div>
+          <label class="block text-xs font-semibold text-stone-700 mb-1">Số điện thoại đăng ký Zalo *</label>
+          <input type="tel" id="regPhone" required placeholder="0912 345 678" class="w-full text-xs border border-stone-300 rounded-xl px-3 py-2 focus:outline-none focus:border-brand-600 bg-stone-50">
+        </div>
+
+        <div>
+          <label class="block text-xs font-semibold text-stone-700 mb-1">Loại hội viên</label>
+          <select id="regRole" class="w-full text-xs border border-stone-300 rounded-xl px-3 py-2 focus:outline-none focus:border-brand-600 bg-stone-50">
+            <option value="customer">Khách hàng thân thiết (Tích điểm nhận ưu đãi)</option>
+            <option value="farmer">Xã viên / Chủ vườn nông sản (Đăng ký cấp mã QR)</option>
+            <option value="partner">Doanh nghiệp / Đại lý phân phối sỉ</option>
+          </select>
+        </div>
+
+        <div class="grid grid-cols-2 gap-2">
+          <div>
+            <label class="block text-xs font-semibold text-stone-700 mb-1">Mật khẩu *</label>
+            <div class="relative">
+              <input type="password" id="regPassword" required placeholder="••••••••" class="w-full text-xs border border-stone-300 rounded-xl px-3 py-2 pr-8 focus:outline-none focus:border-brand-600 bg-stone-50">
+              <button type="button" onclick="togglePasswordVisibility('regPassword', 'regEyeIcon')" class="absolute right-2 top-1/2 -translate-y-1/2 text-stone-400 hover:text-stone-700 text-sm">
+                <i id="regEyeIcon" class="ph ph-eye"></i>
+              </button>
+            </div>
+          </div>
+          <div>
+            <label class="block text-xs font-semibold text-stone-700 mb-1">Xác nhận MK *</label>
+            <div class="relative">
+              <input type="password" id="regConfirmPassword" required placeholder="••••••••" class="w-full text-xs border border-stone-300 rounded-xl px-3 py-2 pr-8 focus:outline-none focus:border-brand-600 bg-stone-50">
+              <button type="button" onclick="togglePasswordVisibility('regConfirmPassword', 'regConfirmEyeIcon')" class="absolute right-2 top-1/2 -translate-y-1/2 text-stone-400 hover:text-stone-700 text-sm">
+                <i id="regConfirmEyeIcon" class="ph ph-eye"></i>
+              </button>
+            </div>
+          </div>
+        </div>
+
+        <button type="submit" class="w-full bg-brand-600 hover:bg-brand-700 text-white font-bold py-2.5 rounded-xl shadow-lg shadow-brand-600/30 text-xs transition flex items-center justify-center gap-2">
+          <i class="ph-bold ph-user-plus"></i>
+          <span>Tạo Tài Khoản & Nhận 50 Điểm</span>
+        </button>
+      </form>
+
+      <!-- Quick Zalo Connect -->
+      <div class="pt-3 border-t border-stone-100 text-center space-y-2">
+        <span class="text-[11px] text-stone-400">Hoặc đăng nhập nhanh không cần mật khẩu:</span>
+        <button onclick="handleZaloLogin()" class="w-full bg-blue-50 hover:bg-blue-100 text-blue-700 border border-blue-200 font-semibold py-2 rounded-xl text-xs flex items-center justify-center gap-2 transition">
+          <i class="ph-bold ph-chat-circle-dots text-base text-blue-600"></i>
+          <span>Kết Nối Nhanh Qua Zalo OTP</span>
+        </button>
+      </div>
+    </div>
+  </div>
+
+  <!-- MY ORDERS TRACKING MODAL (ĐƠN HÀNG CỦA TÔI) -->
+  <div id="ordersModal" class="fixed inset-0 z-50 bg-black/60 backdrop-blur-sm hidden flex items-center justify-center p-4">
+    <div class="bg-white rounded-3xl max-w-lg w-full p-6 sm:p-8 space-y-5 shadow-2xl relative animate-in fade-in zoom-in duration-200">
+      <button onclick="closeOrdersModal()" class="absolute top-5 right-5 text-stone-400 hover:text-stone-700 text-xl transition">
+        <i class="ph-bold ph-x"></i>
+      </button>
+
+      <div class="flex items-center gap-3">
+        <div class="w-10 h-10 rounded-xl bg-brand-100 text-brand-700 flex items-center justify-center text-xl">
+          <i class="ph-bold ph-package"></i>
+        </div>
+        <div>
+          <h3 class="font-bold text-base text-stone-900">Lịch Sử Đơn Hàng Của Tôi</h3>
+          <p class="text-xs text-stone-500">Theo dõi tiến độ hái bưởi & mã vận đơn ViettelPost</p>
+        </div>
+      </div>
+
+      <div id="myOrdersList" class="space-y-3 max-h-[360px] overflow-y-auto pr-1 custom-scrollbar">
+        <!-- Rendered dynamically from auth.js & cart.js -->
+      </div>
+
+      <div class="pt-2">
+        <button onclick="closeOrdersModal()" class="w-full bg-stone-900 hover:bg-stone-800 text-white font-semibold py-2.5 rounded-xl text-xs transition">
+          Đóng Cửa Sổ
+        </button>
+      </div>
+    </div>
+  </div>
+
+  <!-- FLOATING ZALO CHAT BUTTON (GÓC TRÁI DƯỚI CÙNG) -->
+  <div class="fixed bottom-6 left-6 z-40 flex items-center gap-2">
+    <button onclick="openZaloChat()" class="relative flex items-center justify-center w-14 h-14 bg-[#0068FF] hover:bg-[#0052cc] rounded-full shadow-2xl shadow-blue-500/40 text-white transition-all transform hover:scale-110 group">
+      <!-- Pulsing ripple ring -->
+      <span class="absolute inset-0 rounded-full bg-[#0068FF] animate-ping opacity-30"></span>
+      
+      <!-- Official Zalo SVG Icon -->
+      <svg class="w-8 h-8 fill-current relative z-10" viewBox="0 0 48 48">
+        <path d="M24 4C12.95 4 4 12.52 4 23.03C4 29.21 7.07 34.69 11.87 38.21C11.39 40.54 9.94 43.43 9.94 43.43C9.94 43.43 13.97 43.14 17.51 40.51C19.57 41.48 21.73 42.06 24 42.06C35.05 42.06 44 33.54 44 23.03C44 12.52 35.05 4 24 4Z" fill="white"/>
+        <path d="M33.6 28.5C33 28.5 32.5 28.2 32.2 27.8L28.8 23.4L23.7 28.1C23.4 28.4 23 28.5 22.6 28.5C21.7 28.5 21 27.8 21 26.9V18.1C21 17.2 21.7 16.5 22.6 16.5C23.5 16.5 24.2 17.2 24.2 18.1V23.6L29.6 18.6C29.9 18.3 30.3 18.1 30.8 18.1C31.7 18.1 32.4 18.8 32.4 19.7V26.9C32.4 27.8 32.9 28.5 33.6 28.5Z" fill="#0068FF"/>
+      </svg>
+
+      <!-- Tooltip label -->
+      <div class="hidden sm:group-hover:block absolute left-full ml-3 bg-stone-900 text-white text-xs px-3 py-1.5 rounded-xl whitespace-nowrap shadow-xl">
+        Chat Zalo với Chủ Vườn (<span class="htx-zalo-number font-mono">0988.xxx.xxx</span>)
+      </div>
+    </button>
+  </div>
+
+  <!-- JAVASCRIPT MODULES -->
+  <script src="js/data.js"></script>
+  <script src="js/cart.js"></script>
+  <script src="js/ai-advisor.js"></script>
+  <script src="js/chatbot.js"></script>
+  <script src="js/qr-modal.js"></script>
+  <script src="js/auth.js"></script>
+  <script src="js/zalo.js"></script>
+  <script src="js/main.js"></script>
+</body>
+</html>

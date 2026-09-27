@@ -1,0 +1,296 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Đăng Nhập & Đăng Ký - Đặc Sản Đồng Nai</title>
+
+  <!-- Nếu đã đăng nhập rồi thì tự động chuyển thẳng về trang chủ (home.html), -->
+  <!-- không bắt xem lại form đăng nhập. Đặt sớm nhất có thể để tránh nháy hình. -->
+  <script>
+    if (localStorage.getItem('htx_user')) {
+      window.location.replace('home.html');
+    }
+  </script>
+
+  <!-- Tailwind CSS CDN -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            brand: {
+              50: '#f2fbf4',
+              100: '#e1f7e6',
+              500: '#16a34a',
+              600: '#15803d',
+              700: '#166534',
+              800: '#14532d',
+              accent: '#f59e0b'
+            }
+          }
+        }
+      }
+    }
+  </script>
+  <!-- Phosphor Icons -->
+  <script src="https://unpkg.com/@phosphor-icons/web"></script>
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body class="bg-stone-100 min-h-screen flex items-center justify-center p-4 selection:bg-brand-500 selection:text-white">
+
+  <!-- BACK TO HOME BUTTON -->
+  <a href="home.html" class="fixed top-5 left-5 z-20 flex items-center gap-2 bg-white/90 backdrop-blur-md px-4 py-2 rounded-full border border-stone-200 text-stone-700 hover:text-brand-700 hover:border-brand-300 font-semibold text-xs sm:text-sm shadow-sm transition">
+    <i class="ph-bold ph-arrow-left"></i>
+    <span>Quay Về Trang Chủ</span>
+  </a>
+
+  <!-- MAIN AUTH CONTAINER CARD -->
+  <div class="max-w-4xl w-full bg-white rounded-3xl shadow-2xl border border-stone-200 overflow-hidden grid grid-cols-1 md:grid-cols-12 min-h-[580px]">
+    
+    <!-- LEFT SIDE: BRAND SHOWCASE & STORY -->
+    <div class="md:col-span-5 bg-gradient-to-br from-brand-800 via-brand-700 to-emerald-900 p-8 text-white flex flex-col justify-between relative overflow-hidden">
+      <!-- Decorative circles -->
+      <div class="absolute -top-10 -left-10 w-40 h-40 bg-white/10 rounded-full blur-2xl"></div>
+      <div class="absolute -bottom-10 -right-10 w-48 h-48 bg-amber-400/20 rounded-full blur-2xl"></div>
+
+      <div class="relative z-10 space-y-4">
+        <div class="w-12 h-12 rounded-2xl bg-white/20 backdrop-blur-md flex items-center justify-center text-3xl">
+          <i class="ph-bold ph-plant text-amber-300"></i>
+        </div>
+        <div>
+          <h2 class="font-serif-title text-2xl sm:text-3xl font-bold leading-tight">Đặc Sản Đồng Nai</h2>
+          <p class="text-brand-200 text-xs tracking-wider uppercase mt-1 font-semibold">Cổng Thông Tin Hội Viên</p>
+        </div>
+      </div>
+
+      <div class="relative z-10 space-y-4 py-8">
+        <div class="flex items-start gap-3">
+          <div class="w-7 h-7 rounded-full bg-brand-500/40 flex items-center justify-center text-sm flex-shrink-0 mt-0.5">
+            <i class="ph-bold ph-check"></i>
+          </div>
+          <div>
+            <h4 class="font-bold text-xs text-white">Tích Điểm Từng Mùa Vụ</h4>
+            <p class="text-[11px] text-brand-100">Nhận ngay ưu đãi 5% - 15% cho các đơn hàng quà biếu tiếp theo.</p>
+          </div>
+        </div>
+
+        <div class="flex items-start gap-3">
+          <div class="w-7 h-7 rounded-full bg-brand-500/40 flex items-center justify-center text-sm flex-shrink-0 mt-0.5">
+            <i class="ph-bold ph-check"></i>
+          </div>
+          <div>
+            <h4 class="font-bold text-xs text-white">Theo Dõi Vận Đơn ViettelPost</h4>
+            <p class="text-[11px] text-brand-100">Cập nhật lịch trình hái bưởi, đóng thùng xốp máy bay 24/7.</p>
+          </div>
+        </div>
+
+        <div class="flex items-start gap-3">
+          <div class="w-7 h-7 rounded-full bg-brand-500/40 flex items-center justify-center text-sm flex-shrink-0 mt-0.5">
+            <i class="ph-bold ph-check"></i>
+          </div>
+          <div>
+            <h4 class="font-bold text-xs text-white">Dành Riêng Cho Nhà Vườn</h4>
+            <p class="text-[11px] text-brand-100">Xã viên Tân Triều, Xuân Lộc cập nhật nhật ký VietGAP điện tử.</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="relative z-10 text-[11px] text-brand-200 border-t border-brand-600/50 pt-4">
+        Hotline HTX: 0988.xxx.xxx • Hỗ trợ Zalo 24/7
+      </div>
+    </div>
+
+    <!-- RIGHT SIDE: FORMS -->
+    <div class="md:col-span-7 p-6 sm:p-10 flex flex-col justify-center">
+      
+      <!-- Tab Header -->
+      <div class="flex border-b border-stone-200 mb-6">
+        <button id="tabLoginBtn" onclick="showAuthTab('login')" class="w-1/2 pb-3 font-bold text-sm text-brand-700 border-b-2 border-brand-600 transition text-center">
+          Đăng Nhập
+        </button>
+        <button id="tabRegisterBtn" onclick="showAuthTab('register')" class="w-1/2 pb-3 font-medium text-sm text-stone-400 border-b-2 border-transparent hover:text-stone-700 transition text-center">
+          Đăng Ký Tài Khoản
+        </button>
+      </div>
+
+      <!-- FORM 1: ĐĂNG NHẬP -->
+      <form id="standaloneLoginForm" onsubmit="executeLogin(event)" class="space-y-4">
+        <div>
+          <label class="block text-xs font-semibold text-stone-700 mb-1.5">Số điện thoại hoặc Email</label>
+          <div class="relative">
+            <input type="text" id="saLoginId" required placeholder="0912 345 678 hoặc email@domain.com" class="w-full text-xs sm:text-sm border border-stone-300 rounded-xl px-4 py-3 pl-10 focus:outline-none focus:border-brand-600 bg-stone-50">
+            <i class="ph ph-phone absolute left-3.5 top-1/2 -translate-y-1/2 text-stone-400 text-base"></i>
+          </div>
+        </div>
+
+        <div>
+          <div class="flex justify-between items-center mb-1.5">
+            <label class="text-xs font-semibold text-stone-700">Mật khẩu</label>
+            <a href="javascript:alert('Vui lòng liên hệ Hotline/Zalo HTX để cấp lại mật khẩu qua OTP.')" class="text-xs text-brand-600 hover:underline">Quên mật khẩu?</a>
+          </div>
+          <div class="relative">
+            <input type="password" id="saLoginPassword" required placeholder="••••••••" class="w-full text-xs sm:text-sm border border-stone-300 rounded-xl px-4 py-3 pl-10 pr-10 focus:outline-none focus:border-brand-600 bg-stone-50">
+            <i class="ph ph-lock-key absolute left-3.5 top-1/2 -translate-y-1/2 text-stone-400 text-base"></i>
+            <button type="button" onclick="toggleSaPassword('saLoginPassword', 'saLoginEye')" class="absolute right-3.5 top-1/2 -translate-y-1/2 text-stone-400 hover:text-stone-700 text-base">
+              <i id="saLoginEye" class="ph ph-eye"></i>
+            </button>
+          </div>
+        </div>
+
+        <button type="submit" class="w-full bg-brand-600 hover:bg-brand-700 text-white font-bold py-3.5 rounded-xl shadow-lg shadow-brand-600/30 text-sm transition flex items-center justify-center gap-2">
+          <i class="ph-bold ph-sign-in text-base"></i>
+          <span>Đăng Nhập Ngay</span>
+        </button>
+      </form>
+
+      <!-- FORM 2: ĐĂNG KÝ -->
+      <form id="standaloneRegisterForm" onsubmit="executeRegister(event)" class="space-y-3.5 hidden">
+        <div>
+          <label class="block text-xs font-semibold text-stone-700 mb-1">Họ và tên của bạn *</label>
+          <input type="text" id="saRegName" required placeholder="Nguyễn Văn A" class="w-full text-xs sm:text-sm border border-stone-300 rounded-xl px-3.5 py-2.5 focus:outline-none focus:border-brand-600 bg-stone-50">
+        </div>
+
+        <div>
+          <label class="block text-xs font-semibold text-stone-700 mb-1">Số điện thoại đăng ký Zalo *</label>
+          <input type="tel" id="saRegPhone" required placeholder="0912 345 678" class="w-full text-xs sm:text-sm border border-stone-300 rounded-xl px-3.5 py-2.5 focus:outline-none focus:border-brand-600 bg-stone-50">
+        </div>
+
+        <div>
+          <label class="block text-xs font-semibold text-stone-700 mb-1">Loại hội viên</label>
+          <select id="saRegRole" class="w-full text-xs sm:text-sm border border-stone-300 rounded-xl px-3.5 py-2.5 focus:outline-none focus:border-brand-600 bg-stone-50">
+            <option value="customer">Khách hàng thân thiết (Tích điểm giảm giá)</option>
+            <option value="farmer">Xã viên / Chủ vườn nông sản (Đăng ký cấp tem QR)</option>
+            <option value="partner">Doanh nghiệp / Khách mua sỉ</option>
+          </select>
+        </div>
+
+        <div class="grid grid-cols-2 gap-2">
+          <div>
+            <label class="block text-xs font-semibold text-stone-700 mb-1">Mật khẩu *</label>
+            <div class="relative">
+              <input type="password" id="saRegPassword" required placeholder="Tối thiểu 6 ký tự" class="w-full text-xs sm:text-sm border border-stone-300 rounded-xl px-3 py-2 pr-8 focus:outline-none focus:border-brand-600 bg-stone-50">
+              <button type="button" onclick="toggleSaPassword('saRegPassword', 'saRegEye')" class="absolute right-2.5 top-1/2 -translate-y-1/2 text-stone-400 hover:text-stone-700 text-sm">
+                <i id="saRegEye" class="ph ph-eye"></i>
+              </button>
+            </div>
+          </div>
+          <div>
+            <label class="block text-xs font-semibold text-stone-700 mb-1">Xác nhận MK *</label>
+            <div class="relative">
+              <input type="password" id="saRegConfirmPassword" required placeholder="Nhập lại mật khẩu" class="w-full text-xs sm:text-sm border border-stone-300 rounded-xl px-3 py-2 pr-8 focus:outline-none focus:border-brand-600 bg-stone-50">
+              <button type="button" onclick="toggleSaPassword('saRegConfirmPassword', 'saRegConfirmEye')" class="absolute right-2.5 top-1/2 -translate-y-1/2 text-stone-400 hover:text-stone-700 text-sm">
+                <i id="saRegConfirmEye" class="ph ph-eye"></i>
+              </button>
+            </div>
+          </div>
+        </div>
+
+        <button type="submit" class="w-full bg-brand-600 hover:bg-brand-700 text-white font-bold py-3 rounded-xl shadow-lg shadow-brand-600/30 text-xs sm:text-sm transition flex items-center justify-center gap-2">
+          <i class="ph-bold ph-user-plus text-base"></i>
+          <span>Tạo Tài Khoản & Nhận 50 Điểm Thưởng</span>
+        </button>
+      </form>
+
+      <!-- Quick Zalo OTP Login -->
+      <div class="pt-5 border-t border-stone-200 mt-5 text-center space-y-2.5">
+        <span class="text-xs text-stone-400">Hoặc đăng nhập nhanh qua liên kết:</span>
+        <button onclick="executeZaloLogin()" class="w-full bg-blue-50 hover:bg-blue-100 text-blue-700 border border-blue-200 font-semibold py-2.5 rounded-xl text-xs sm:text-sm flex items-center justify-center gap-2 transition">
+          <i class="ph-bold ph-chat-circle-dots text-lg text-blue-600"></i>
+          <span>Đăng Nhập Bằng Tài Khoản Zalo OTP</span>
+        </button>
+      </div>
+
+    </div>
+
+  </div>
+
+  <!-- Script for standalone login page -->
+  <script>
+    function showAuthTab(tab) {
+      const loginBtn = document.getElementById('tabLoginBtn');
+      const regBtn = document.getElementById('tabRegisterBtn');
+      const loginForm = document.getElementById('standaloneLoginForm');
+      const regForm = document.getElementById('standaloneRegisterForm');
+
+      if (tab === 'login') {
+        loginBtn.className = 'w-1/2 pb-3 font-bold text-sm text-brand-700 border-b-2 border-brand-600 transition text-center';
+        regBtn.className = 'w-1/2 pb-3 font-medium text-sm text-stone-400 border-b-2 border-transparent hover:text-stone-700 transition text-center';
+        loginForm.classList.remove('hidden');
+        regForm.classList.add('hidden');
+      } else {
+        regBtn.className = 'w-1/2 pb-3 font-bold text-sm text-brand-700 border-b-2 border-brand-600 transition text-center';
+        loginBtn.className = 'w-1/2 pb-3 font-medium text-sm text-stone-400 border-b-2 border-transparent hover:text-stone-700 transition text-center';
+        regForm.classList.remove('hidden');
+        loginForm.classList.add('hidden');
+      }
+    }
+
+    function toggleSaPassword(inputId, iconId) {
+      const input = document.getElementById(inputId);
+      const icon = document.getElementById(iconId);
+      if (!input || !icon) return;
+      if (input.type === 'password') {
+        input.type = 'text';
+        icon.classList.remove('ph-eye');
+        icon.classList.add('ph-eye-slash');
+      } else {
+        input.type = 'password';
+        icon.classList.remove('ph-eye-slash');
+        icon.classList.add('ph-eye');
+      }
+    }
+
+    function executeLogin(e) {
+      e.preventDefault();
+      const id = document.getElementById('saLoginId').value.trim();
+      const user = {
+        name: id.includes('@') ? id.split('@')[0] : 'Khách Thân Thiết',
+        phone: id,
+        role: 'Hội viên Thân Thiết',
+        points: 150
+      };
+      localStorage.setItem('htx_user', JSON.stringify(user));
+      alert(`🎉 Đăng nhập thành công!\nChào mừng ${user.name} trở lại. Đang chuyển về trang chủ...`);
+      window.location.href = 'home.html';
+    }
+
+    function executeRegister(e) {
+      e.preventDefault();
+      const name = document.getElementById('saRegName').value.trim();
+      const phone = document.getElementById('saRegPhone').value.trim();
+      const role = document.getElementById('saRegRole').value;
+      const pwd = document.getElementById('saRegPassword').value;
+      const confirmPwd = document.getElementById('saRegConfirmPassword').value;
+
+      if (pwd !== confirmPwd) {
+        alert('Mật khẩu nhập lại không khớp!');
+        return;
+      }
+
+      const user = {
+        name: name,
+        phone: phone,
+        role: role === 'farmer' ? 'Xã viên / Chủ Vườn' : 'Khách Hàng Thân Thiết',
+        points: 50
+      };
+      localStorage.setItem('htx_user', JSON.stringify(user));
+      alert(`🎉 Chúc mừng ${name} đã đăng ký tài khoản thành công!\nTặng bạn 50 điểm thành viên. Đang chuyển về trang chủ...`);
+      window.location.href = 'home.html';
+    }
+
+    function executeZaloLogin() {
+      const user = {
+        name: 'Anh Nam (Hội Viên Zalo)',
+        phone: '0988.123.456',
+        role: 'Hội viên Zalo Đã Xác Thực',
+        points: 120
+      };
+      localStorage.setItem('htx_user', JSON.stringify(user));
+      alert('Đăng nhập thành công qua Zalo! Đang chuyển về trang chủ...');
+      window.location.href = 'home.html';
+    }
+  </script>
+</body>
+</html>
