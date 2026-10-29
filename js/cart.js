@@ -208,8 +208,8 @@ function updateVietQR(amount) {
   }
 }
 
-// 6. Xử lý Đặt hàng & Mở Zalo
-function handleOrderSubmit(e) {
+// 6. Xử lý Đặt hàng, Gửi Webhook & Mở Zalo
+async function handleOrderSubmit(e) {
   e.preventDefault();
   const name = document.getElementById('custName').value.trim();
   const phone = document.getElementById('custPhone').value.trim();
@@ -223,9 +223,8 @@ function handleOrderSubmit(e) {
   }
 
   const totalPrice = document.getElementById('cartTotalPrice').innerText;
-  const itemsText = cart.map(i => `- ${i.name} (SL: ${i.quantity})`).join('\n');
 
-  // Lưu đơn vào danh sách
+  // Tạo object đơn hàng
   const existingOrders = JSON.parse(localStorage.getItem('htx_orders') || '[]');
   const newOrder = {
     id: 'ĐN-' + Math.floor(100000 + Math.random() * 900000),
@@ -235,11 +234,13 @@ function handleOrderSubmit(e) {
     recipient: name,
     phone: phone,
     address: addr,
+    notes: notes, // Bổ sung thêm trường ghi chú vào dữ liệu gửi đi
     paymentMethod: paymentMethod === 'banking' ? 'Chuyển khoản VietQR' : 'Thanh toán khi nhận hàng (COD)',
     carrier: 'ViettelPost Bay Hỏa Tốc (24-36h)',
     status: 'Đang hái & đóng gói tại vườn'
   };
 
+  // Lưu tạm vào Local Storage
   existingOrders.unshift(newOrder);
   localStorage.setItem('htx_orders', JSON.stringify(existingOrders));
 
@@ -250,33 +251,40 @@ function handleOrderSubmit(e) {
     if (typeof updateAuthUI === 'function') updateAuthUI();
   }
 
-  // Mở popup gửi đơn hàng trực tiếp qua Zalo
-  if (typeof showZaloSuccessModal === 'function') {
-    showZaloSuccessModal(newOrder);
-  } else {
-    alert(`🎉 Đơn hàng ${newOrder.id} đã được tạo thành công! Tổng tiền: ${totalPrice}`);
+  // --- BẮT ĐẦU ĐOẠN GỬI DỮ LIỆU QUA WEBHOOK ---
+  try {
+    // 🔴 THAY BẰNG URL WEBHOOK / GOOGLE SHEETS APPS SCRIPT / ZALO OA CỦA BẠN
+    const WEBHOOK_URL = 'https://your-webhook-url.com/api/orders'; 
+    
+    // Bạn có thể thêm code hiển thị loading spinner ở đây (nếu có)
+    
+    const response = await fetch(WEBHOOK_URL, {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json',
+      },
+      body: JSON.stringify(newOrder) // Gửi toàn bộ cục dữ liệu newOrder
+    });
+
+    // Nếu server trả về status 200 - 299 (Thành công)
+    if (response.ok) {
+      // Mở popup gửi đơn hàng trực tiếp qua Zalo hoặc dùng Toast
+      if (typeof showZaloSuccessModal === 'function') {
+        showZaloSuccessModal(newOrder);
+      } else {
+        // Thay thế alert() bằng Toast mượt mà
+        showToast(`🎉 Đơn hàng ${newOrder.id} đã được gửi thành công!`);
+      }
+
+      // Xóa giỏ hàng và reset form sau khi thành công
+      clearCart();
+      document.getElementById('orderForm').reset();
+    } else {
+      alert('Có lỗi từ máy chủ khi lưu đơn hàng. Vui lòng thử lại!');
+    }
+  } catch (error) {
+    console.error('Lỗi khi gửi webhook:', error);
+    alert('Không thể kết nối đến hệ thống. Vui lòng kiểm tra lại mạng Internet!');
   }
-
-  clearCart();
-  document.getElementById('orderForm').reset();
-}
-
-// Toast thông báo nhỏ góc màn hình
-function showToast(message) {
-  let toast = document.getElementById('appToast');
-  if (!toast) {
-    toast = document.createElement('div');
-    toast.id = 'appToast';
-    toast.className = 'fixed top-5 right-5 z-50 bg-stone-900 text-white text-xs font-semibold px-4 py-3 rounded-2xl shadow-2xl flex items-center gap-2 transition-all transform duration-300 translate-y-[-20px] opacity-0 pointer-events-none';
-    document.body.appendChild(toast);
-  }
-
-  toast.innerHTML = `<i class="ph-bold ph-check-circle text-emerald-400 text-base"></i> <span>${escapeHtml(message)}</span>`;
-  toast.classList.remove('translate-y-[-20px]', 'opacity-0');
-  toast.classList.add('translate-y-0', 'opacity-100');
-
-  setTimeout(() => {
-    toast.classList.remove('translate-y-0', 'opacity-100');
-    toast.classList.add('translate-y-[-20px]', 'opacity-0');
-  }, 2500);
+  // --- KẾT THÚC ĐOẠN GỬI DỮ LIỆU QUA WEBHOOK ---
 }
